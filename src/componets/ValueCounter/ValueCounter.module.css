@@ -1,16 +1,83 @@
 .block{
-    border: 2px black solid;
-    border-radius: 5px;
-    width: 300px;
-    height: 200px;
+    border: 4px #1e1d1e solid;
+    border-radius: 10px;
+    width: 400px;
+    height: 300px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+
 
 }
-.input {
-    background-color: transparent;
-    border: none;
-    border-bottom: 2px solid red ;
-    width: 100px;
+.blockValue{
+    color: white;
+    font-weight: 600;
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
 }
+
+.maxValue{
+    padding: 20px;
+}
+
+.input {
+    background-color: white;
+    border: none;
+    border: 2px solid #1e1d1e;
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+    font-weight: bold;
+    color: black;
+    font-size: 1rem;
+    transition: .3s;
+}
+
+.input:hover{
+    background-image: radial-gradient( circle 588px at 31.7% 40.2%,  rgba(225,200,239,1) 21.4%, rgba(163,225,233,1) 57.1% );    box-shadow: 0 15px 20px rgb(149, 188, 233);
+    color: white;
+    font-size: 1.6rem;
+    transform: translateY(-7px);
+}
+
+.cx{
+
+    margin-top: 50px;
+
+}
+.btn {
+    text-decoration: none;
+    display: inline-block;
+    width: 180px;
+    height: 60px;
+    line-height: 45px;
+    border-radius: 45px;
+    margin: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: #524f4e;
+    background: white;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+    transition: .3s;
+
+}
+
+
+.btn:hover{
+    background-image: radial-gradient( circle 588px at 31.7% 40.2%,  rgba(225,200,239,1) 21.4%, rgba(163,225,233,1) 57.1% );    box-shadow: 0 15px 20px rgb(149, 188, 233);
+    color: white;
+    font-size: 1rem;
+    transform: translateY(-7px);
+}
+
+/*.btn:active{*/
+/*    transition-duration: 0.3s;*/
+/*    background-color: black;*/
+/*    color: yellow;*/
+/*}*/

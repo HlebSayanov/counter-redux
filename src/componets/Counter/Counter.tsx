@@ -3,7 +3,8 @@ import style from './Counter.module.css'
 import {useDispatch, useSelector} from "react-redux";
 import {RootStateType} from "../../redux/store";
 import {addCountAC, InitialStateType, resetCountAC} from "../../redux/counter-reducer";
-import {ValueCounter} from "../ValueCounter/ValueCounter";
+import {Button} from "../Button/Button";
+
 
 
 export const Counter = () => {
@@ -12,27 +13,39 @@ export const Counter = () => {
     const dispatch= useDispatch()
     const count = counter.count
 
-    console.log(count)
-const addCount = () => {
+   const countError = +counter.count === counter.maxValue
+   const countIncorrect  = counter.count === 'incorrect value'
+    const disableBtn = counter.count === 'please set btn'
+
+    const addCount = () => {
   dispatch(addCountAC())
 }
 const resetCount = () => {
   dispatch(resetCountAC())
 }
+const ifError = countError ? style.countError : countIncorrect ? style.titleIncorrect  :style.count
+
+
 
 
     return (
         <>
 
-            <ValueCounter />
+
             <div className={style.block}>
             <div className={style.countBlock}>
-                <div>Count</div>
-                <div>{count}</div>
+                <div className={style.title}>Count</div>
+                <div className={ifError}>{count}</div>
             </div>
                 <div className={style.blockForBtn}>
-                    <button onClick={addCount}>inc</button>
-                    <button onClick={resetCount}>res</button>
+                    {disableBtn || countError
+                        ? <Button styleCss={style.btnError} name={'inc'} />
+                        : <Button styleCss={style.btn} name={'inc'} callbackOnClick={addCount}/>}
+
+                    {disableBtn
+                        ? <Button styleCss={style.btnError} name={'res'}/>
+                       : <Button styleCss={style.btn} name={'res'} callbackOnClick={resetCount}/>}
+
                 </div>
             </div>
 

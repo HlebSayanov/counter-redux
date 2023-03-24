@@ -9,6 +9,7 @@ import {
 } from "../../redux/counter-reducer";
 import {useDispatch, useSelector} from "react-redux";
 import {RootStateType} from "../../redux/store";
+import {Button} from "../Button/Button";
 
 export const ValueCounter = () => {
 
@@ -34,14 +35,14 @@ export const ValueCounter = () => {
         <>
             <div className={style.block}>
                 <div className={style.blockValue}>
-                    <div>
+                    <div className={style.maxValue}>
                         max value : <input className={style.input}
                                            onChange={onChangeHandlerMax}
                                            type="number"
                                            value={maxValue}/>
                     </div>
                     <div>
-                        min value : <input className={style.input}
+                        min value :  <input className={style.input}
                                            onChange={onChangeHandlerMin}
                                            type="number"
                                            value={minValue}
@@ -49,8 +50,9 @@ export const ValueCounter = () => {
                     />
                     </div>
                     <div>
-                        <div>
-                            <button onClick={onClickHandlerBtnSet} >set</button>
+                        <div className={style.cx}>
+                            <Button styleCss={style.btn} name={'set'} callbackOnClick={onClickHandlerBtnSet}/>
+                            {/*<button className={style.btn} onClick={onClickHandlerBtnSet} >set</button>*/}
                         </div>
                     </div>
 
